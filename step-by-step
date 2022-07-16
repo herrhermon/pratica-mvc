@@ -1,0 +1,45 @@
+#Inicir o git no projeto
+git init
+
+# Inicializa npm no projeto
+npm init -y
+ 
+#Instala o express no projeto
+npm install express --save
+
+#Instala o ejs no projeto
+npm install ejs
+
+#Instala o nodemon como dependencia de desenvolvimento
+npm install nodemon -D
+
+#Trocar no package.json trocar o script para "start":"nodemon app"
+
+#Criar a pasta src na raiz do projeto. A pasta node-modules fica no mesmo nivel, ou seja, na raiz do projeto
+
+#Criar as pastas controllers, views, routes dentro de src.
+
+#Criar o app.js na raiz do projeto
+
+#Criar a pasta public na raiz do projeto
+
+### Para descompactar a visualição de pastas compactadas ir em >> Preferencias >> Configurações >> Pesquisar explorer compact >> Desmarcar a opção
+
+## Configurar o express no app.js . Ver essa etapa no arquivo app.js
+
+
+## Criar os controladores e rotas
+
+#Criar as rotas. No projeto criado a rota produtos.
+#Importar a rota no app.js(etapa 3)
+
+
+#Criar controladores. Controladores são nomeados com letras maiusculas
+
+#Importar o controlador na rota
+
+#No controlador colocar o retorno do index com res.render.
+
+#Criar uma rota de erro.(etapa 4)
+
+#Criar os partials
