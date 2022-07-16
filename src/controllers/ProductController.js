@@ -43,7 +43,7 @@ const productController ={
         const productResult = products.find(product =>product.id ===parseInt(id))//converte o id para inteiro embora seja um string
         if(!productResult){
             //res.send('Erro . Produto não encontrado')//Mostra o texto
-            res.render('error', {title:'Pagina não encontratada'})
+            res.render('error', {title:'Pagina não encontratada',message:"Produto não encontrado"})
         }
         return res.render('product',{title:'Visualizar Produto', product: productResult})
 
@@ -57,10 +57,46 @@ const productController ={
     },
     
     //Cria o produto. Não retorna pagina.
-    store:(req,res)=>{},
+    store:(req,res)=>{
+        const{nome,preco,tamanho}=req.body;
+        if(!nome||!preco||!tamanho){
+            return res.render('product-create',{
+                title:'Criar Produto',
+                error:{
+                    message:"Preencha todos os campos"
+                }
+        })
+        }
+        const newProduct={
+            id:products.length+1,
+            nome:nome,
+            preco:preco,
+            tamanho:tamanho,
+        }
+        products.push(newProduct);
+        return res.render('product-create',{
+            title:'Criar Produto',
+            error:{
+                message:"Produto criado com sucesso"
+            }
+    })
+
+        
+    },
 
     //Pagina para editar um produto.
-    edit:(req,res)=>{},
+    edit:(req,res)=>{
+        const{id}=req.params // Esse valor é string
+        const productResult = products.find(product =>product.id ===parseInt(id))//converte o id para inteiro embora seja um string
+        if(!productResult){
+            //res.send('Erro . Produto não encontrado')//Mostra o texto
+            res.render('error', {title:'Erro',message:"Produto não encontrado"})
+        }
+        return res.render('product-edit',{
+            title:'Editar Produto',
+            product:productResult,
+        })
+    },
 
     //Edita o produto. Não retorna pagina
     update:(req,res)=>{},

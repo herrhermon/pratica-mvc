@@ -33,6 +33,9 @@ app.use(express.json())//Converte o body do req para objeto, ou seja, em json. S
 // .use()trazer uma configuração adicional ao express
 // .set() alterar uma configuração que já existe por padrão no express
 
+//Converte corpo da requisição para forma que o url aceita
+app.use(express.urlencoded({extended:false}))
+
 //____________________________________________________________________
 
 

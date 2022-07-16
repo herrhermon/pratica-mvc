@@ -10,6 +10,9 @@ const productController=require('../controllers/ProductController')
 
 
 router.get("/create",productController.create)
+router.post("/create",productController.store)
+
+router.get("/edit/:id",productController.edit)
 
 router.get("/",productController.index)
 router.get("/:id",productController.show)

@@ -1,0 +1,18 @@
+<%- include('./partials/head') %>
+<main>
+    <h1>Atualizar produto</h1>
+    <form action="/product/create" method="post">
+        <input value="<%=product.nome %>" type="text" name="nome" placeholder="Nome do produto"><br><br>
+        <input value="<%=product.preco %>" type="number" name="preco" placeholder="Preço do produto"><br><br>
+        <input value="<%=product.tamanho%>" type="text" name="tamanho" placeholder="Tamanho"><br><br>
+        
+        <% if(locals.error){ %>
+        <h3><%= error.message %></h3>
+        <% } %>
+
+        <button type="submit">Atualizar produto</button><br>
+        <a href="/product"><h3>Home Produtos</h3></a>
+        
+    </form>
+</main>
+<%- include('./partials/footer') %>
