@@ -43,3 +43,11 @@ npm install nodemon -D
 #Criar uma rota de erro.(etapa 4)
 
 #Criar os partials
+
+### Etapa 4
+
+#Para usar outros metodos html alem de get e post usar o comando:
+install method-override
+
+#No app.js criar a variavel methodOverride que receberá o metodo override
+const override=require('method-override')

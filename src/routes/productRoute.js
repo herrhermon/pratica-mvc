@@ -13,8 +13,15 @@ router.get("/create",productController.create)
 router.post("/create",productController.store)
 
 router.get("/edit/:id",productController.edit)
+router.put("/edit/:id",productController.update) //Pode ser também um patch.
+
+router.get("/delete/:id",productController.delete)
+
+router.delete("/delete/:id", productController.destroy);
 
 router.get("/",productController.index)
 router.get("/:id",productController.show)
+
+
 
 module.exports =router;

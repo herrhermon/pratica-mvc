@@ -1,7 +1,8 @@
 <%- include('./partials/head') %>
 <main>
     <h1>Atualizar produto</h1>
-    <form action="/product/create" method="post">
+    <!-- ?_method para sobrescrever o put pelo post. Html so permite get e post. Usar o override para usar outros metodos -->
+    <form action="/product/edit/<%= product.id %>?_method=put" method="post">
         <input value="<%=product.nome %>" type="text" name="nome" placeholder="Nome do produto"><br><br>
         <input value="<%=product.preco %>" type="number" name="preco" placeholder="Preço do produto"><br><br>
         <input value="<%=product.tamanho%>" type="text" name="tamanho" placeholder="Tamanho"><br><br>

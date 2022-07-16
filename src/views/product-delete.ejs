@@ -1,0 +1,15 @@
+<%- include('./partials/head') %>
+<main>
+    <h1>Deletar produto</h1>
+    <div>
+        <h2><%=product.nome %></h2>
+        <p><%=product.preco%></p>
+        <p><%=product.tamanho%></p>
+    </div>
+    <div>
+        <form action="/product/delete/<%= product.id %>?_method=delete" method="post">
+          <button type="submit">Deletar</button>
+        </form>
+    </div>
+</main>
+<%- include('./partials/footer') %>

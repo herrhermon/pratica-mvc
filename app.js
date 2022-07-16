@@ -15,7 +15,9 @@ const port = 3000;
 //Cria a pasta publica, que poderá ser visualizada por qualquer usuário, ou seja, pode ser vista por fora. Nesta pasta vem os .css's. Os arquivos da pasta publica não precisa de rotas.
 // Pasta que estão dentro da aplicação (No src) precisam de rotas para serem acessadas.
 
-
+//Etapa4
+//Importa o pacote method-override
+const methodOverride = require("method-override");
 
 //Etapa3 - Importação da rota. Atribui o conteudo do productRoute a variavel.
 const productRoute=require('./src/routes/productRoute');
@@ -27,6 +29,8 @@ app.use(express.static(__dirname+'/public'))
 app.set('view engine','ejs') // muda a engine do padrão para o template engine ejs.
 
 app.set('views',__dirname +'/src/views')//altera a configuração inicial do express do caminho de views para o caminho de views definido para este projeto.
+
+app.use(methodOverride("_method"));
 
 app.use(express.json())//Converte o body do req para objeto, ou seja, em json. Serve para usar conseguir fazer a desestruturação de objeto usando o req.body.
 
