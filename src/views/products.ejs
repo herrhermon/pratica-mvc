@@ -1,5 +1,32 @@
 <%- include('./partials/head') %>
 <main>
     <h1>Produtos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Tamanho</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let product of listProducts){%>
+            <tr>
+                <td><%= product.id %></td>
+                <td><%= product.nome %></td>
+                <td><%= product.preco %></td>
+                <td><%= product.tamanho %></td>
+                <td>
+                    <a href="/product/<%=product.id %>">Visualizar</a>
+                    <a href="product/edit/<%=product.id %>">Editar</a>
+                    <a href="product/delete/<%=product.id %>">Deletar</a>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+
 </main>
 <%- include('./partials/footer') %>
